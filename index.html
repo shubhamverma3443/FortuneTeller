@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>8 Ball</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("735068923.webp");
+            background-size: 100% 170%;
+            background-repeat: no-repeat;
+        }
+
+        #d1 {
+            margin-top: 20%;
+            text-align: center;
+
+        }
+
+        #d2 {
+            display: none;
+            text-align: center;
+            color: white;
+        }
+
+        #d3 {
+            display: none;
+        }
+
+        #d4 {
+            display: none;
+        }
+
+        input {
+            border-radius: 25px;
+            border: none;
+            width: 40%;
+            height: 50px;
+            font-size: 40px;
+            text-align: center;
+            background: transparent;
+            border: 1px solid white;
+        }
+        input:hover{
+            border: 2px solid;
+            transition: 1s;
+        }
+        
+
+        img {
+            height: 300px;
+            width: 300px;
+            margin-top: 5%;
+        }
+        #name{
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        <lable class="text-light h1">Enter Your Name</lable><br><br>
+        <input type="text" id="inp1" autocomplete="off"><br><br>
+        <button type="button" class="btn btn-dark btn-lg " onclick="funName()">Submit</button>
+    </div>
+    <div id="d2">
+        <lable class="text-light h1">Welcome!</lable>
+        <lable id="name" class="text-light h1 mx-2"></lable>
+        <h2 class="my-3">Please select your Question</h2>
+    </div>
+    <div id="d3" class="container">
+        <div class="card-deck">
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 1:</h5>
+                    <p class="card-text">Will I get a sickness or disease?</p>
+                    <button  class="btn btn-dark" onclick="ques('Will I get a sickness or disease?','q1')"
+                        id="q1">Predict</button>
+                </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 2:</h5>
+                    <p class="card-text">Will I get the promotion at work?</p>
+                    <button  class="btn btn-dark" onclick="ques('Will I get the promotion at work?','q2')"
+                        id="q2">Predict</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 3:</h5>
+                    <p class="card-text">Will I live a long life?</p>
+                    <button  class="btn btn-dark" onclick="ques('Will I live a long life?','q3')"
+                        id="q3">Predict</button>
+                </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 4:</h5>
+                    <p class="card-text">Will I have friends if I move away?</p>
+                    <button class="btn btn-dark" onclick="ques('Will I have friends if I move away?','q4')"
+                        id="q4">Predict</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 5:</h5>
+                    <p class="card-text">Will I be able to buy a luxury car?</p>
+                    <button  class="btn btn-dark" onclick="ques('Will I be able to buy a luxury car?','q5')"
+                        id="q5">Predict</button>
+                </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 6:</h5>
+                    <p class="card-text">Can I become rich ?</p>
+                    <button  class="btn btn-dark" onclick="ques('Can I become rich ?','q6')" id="q6">Predict</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 7:</h5>
+                    <p class="card-text">Will it be possible to travel to Venus in the next two years ? </p>
+                    <button  class="btn btn-dark" onclick="ques('Will it be possible to travel to Venus in the next two years ? ','q7')" id="q7">Predict</button>
+                </div>
+            </div>
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Question 8:</h5>
+                    <p class="card-text">Will I earn in dollars?</p>
+                    <button  class="btn btn-dark" onclick="ques('Will I earn in dollars?','q8')" id="q8">Predict</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="d4">
+        <img src="image.png" class="img-fluid rounded mx-auto d-block" alt="Responsive image">
+        <div class="card  w-50 text-center mx-auto">
+            <h5 class="card-header" id="disq">Featured</h5>
+            <div class="card-body">
+                <h5 class="card-title py-3 h2" id="disa">Special title treatment</h5>
+                <button  class="btn btn-dark mr-3 w-25" onclick="funName()" id="mod">Next</button>
+                <button  class="btn btn-dark ml-3 w-25" onclick="location.reload();">Quit</button>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+    <script>
+        var nme = '';
+        var ran = 0;
+        var disb = '';
+        var i = 0;
+        var answer = ['It is certain.', 'Most likely.', 'Cannot predict now.', 'My reply is no.', 'My sources say no.', 'Better not tell you now.', 'Signs point to yes.', 'Without a doubt.']
+        function funName() {
+            document.getElementById('d1').style.display = "none";
+            document.getElementById('d2').style.display = "block";
+            document.getElementById('d3').style.display = "block";
+            document.getElementById('d4').style.display = "none";
+            nme = document.getElementById('inp1').value;
+            document.getElementById('name').innerHTML = nme;
+
+        }
+        function ques(q, disb) {
+            if (i != 7) {
+                document.getElementById('d1').style.display = "none";
+                document.getElementById('d2').style.display = "none";
+                document.getElementById('d3').style.display = "none";
+                document.getElementById('d4').style.display = "block";
+                document.getElementById('disq').innerHTML = 'Question: ' + q;
+                ran = Math.floor(Math.random() * 8);
+                document.getElementById('disa').innerHTML = answer[ran];
+                document.getElementById(disb).disabled = true;
+                i++;
+            }
+            else {
+                document.getElementById('d1').style.display = "none";
+                document.getElementById('d2').style.display = "none";
+                document.getElementById('d3').style.display = "none";
+                document.getElementById('d4').style.display = "block";
+                document.getElementById('disq').innerHTML = 'Question: ' + q;
+                ran = Math.floor(Math.random() * 8);
+                document.getElementById('disa').innerHTML = answer[ran];
+                document.getElementById(disb).disabled = true;
+                document.getElementById('mod').disabled = true;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
